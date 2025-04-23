@@ -1,3 +1,4 @@
 {
-  "MATLAB.installPath": "/Applications/MATLAB_R2024b.app"
+  "MATLAB.installPath": "/Applications/MATLAB_R2024b.app",
+  "java.configuration.updateBuildConfiguration": "interactive"
 }
