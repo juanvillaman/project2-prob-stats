@@ -19,3 +19,5 @@ Thumbs.db
 *.asv
 *.m~ 
 *.bak
+
+*.csv
