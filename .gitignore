@@ -1,0 +1,21 @@
+# Ignore build output
+target/
+*.class
+*.jar
+*.war
+*.log
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+*.swp
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# MATLAB temporary files
+*.asv
+*.m~ 
+*.bak
