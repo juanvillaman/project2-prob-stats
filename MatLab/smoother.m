@@ -1,3 +1,4 @@
+% Paste this code into the MatLab Command Window if having trouble running it. It should work perfectfly
 data = readmatrix('saltedGraph.csv');
 x = data(:, 1);
 y = data(:, 2);
