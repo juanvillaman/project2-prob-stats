@@ -23,9 +23,9 @@ public class Smoother {
    * This method reads the CSV, smooths the values, and writes the CSV using helper methods written below.
    * This method allows the Main method to simply smooth the data and create the CSV in one line
    */
-  public void smoothData(){
+  public void smoothData(int sims){
     readCSV("Salted-Data.csv");
-    smoothYValues(25);
+    smoothYValues(sims);
     writeCSV("Smoothed-Data.csv");
   }
 
