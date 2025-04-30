@@ -6,6 +6,6 @@
 public class TestSmoother {
   public static void main(String[] args) {
     Smoother test = new Smoother();
-    test.smoothData(25);
+    test.smoothData(20);
   }
 }

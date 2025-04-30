@@ -21,7 +21,7 @@ public class SaltData {
    */
   public void saltData() {
     readCSV("Plotter-Data.csv");
-    saltYValues(1, 2537);
+    saltYValues(1, 350);
     writeCSV("Salted-Data.csv");
   }
 
@@ -55,12 +55,12 @@ public class SaltData {
   public void saltYValues(int min, int max) {
     Random rand = new Random();
     for (double y : yPoints) {
-      int noise = rand.nextInt(max - min + 1) + min;
-      boolean addNoise = rand.nextBoolean();
-      if (addNoise) {
-        newY.add(y + noise);
+      int salt = rand.nextInt(max - min + 1) + min;
+      boolean addSalt = rand.nextBoolean();
+      if (addSalt) {
+        newY.add(y + salt);
       } else {
-          newY.add(y - noise);
+          newY.add(y - salt);
       }
     }
   }

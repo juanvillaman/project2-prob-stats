@@ -25,14 +25,14 @@ public class JFreeChartsGraphing {
    * Video Tutorial used for JFreeChart and how to use ChartFactory: https://youtu.be/skxH0oX6XlI?list=PLS1QulWo1RIbx1dvFMTFOMxzAmO28Qoc9
    */
   public void plotGraphs(){
-    XYSeries original = loadCSV("Plotter-Data.csv", "Original");
-    XYSeries salted = loadCSV("Salted-Data.csv", "Salted");
-    XYSeries smoothed = loadCSV("Smoothed-Data.csv", "Smoothed");
+    XYSeries originalGraph = loadCSV("Plotter-Data.csv", "Original");
+    XYSeries saltedGraph = loadCSV("Salted-Data.csv", "Salted");
+    XYSeries smoothedGraph = loadCSV("Smoothed-Data.csv", "Smoothed");
 
     XYSeriesCollection dataset = new XYSeriesCollection();
-    dataset.addSeries(original);
-    dataset.addSeries(salted);
-    dataset.addSeries(smoothed);
+    dataset.addSeries(originalGraph);
+    dataset.addSeries(saltedGraph);
+    dataset.addSeries(smoothedGraph);
 
     JFreeChart chart = ChartFactory.createXYLineChart("Original vs Salted vs Smoothed", "X", "Y", dataset, PlotOrientation.VERTICAL, true, true, false);
 
@@ -51,23 +51,22 @@ public class JFreeChartsGraphing {
    * @param String label - this is the label given to the line in the XYSeries
    * @return series - returns the series that now has the values from our CSV files
    */
-  private static XYSeries loadCSV(String filename, String label) {
+  public static XYSeries loadCSV(String filename, String label) {
     XYSeries series = new XYSeries(label);
-    try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+    try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
       String line;
-      while ((line = reader.readLine()) != null) {
+      while ((line = br.readLine()) != null) {
         if (line.toLowerCase().contains("x")) continue; // This line skips the header (since every CSV file begins with X)
-        String[] parts = line.split(",");
-        if (parts.length >= 2) {
-          double x = Double.parseDouble(parts[0].trim());
-          double y = Double.parseDouble(parts[1].trim());
+        String[] vals = line.split(",");
+        if (vals.length >= 2) {
+          double x = Double.parseDouble(vals[0].trim());
+          double y = Double.parseDouble(vals[1].trim());
           series.add(x, y);
         }
       }
     }catch (IOException e) {
         System.err.println("Failed to load " + filename + ": " + e.getMessage());
     }
-
     return series;
   }
 }

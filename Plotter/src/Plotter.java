@@ -36,7 +36,7 @@ public class Plotter {
     double c = in.nextDouble();
 
     // This line plots the quadratic formula from -100 <= x <= 100
-    for(double x = -100; x <= 100; x += 1){
+    for(double x = -20; x <= 20; x += 1){
       double y = a * x * x + b * x + c; // y = ax^2 + bx + c
       xValues.add(x);
       yValues.add(y);

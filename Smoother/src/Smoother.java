@@ -27,6 +27,7 @@ public class Smoother {
     readCSV("Salted-Data.csv");
     smoothYValues(sims);
     writeCSV("Smoothed-Data.csv");
+    System.out.println("Data has been smoothed " + sims + " times.");
   }
 
   /*
