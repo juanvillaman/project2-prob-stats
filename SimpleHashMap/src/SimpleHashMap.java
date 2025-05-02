@@ -27,6 +27,7 @@ public class SimpleHashMap {
    * 
    * @param initialSize - this is the original size of our HashMap to store strings
    */
+  @SuppressWarnings("unchecked")
   public SimpleHashMap(int initialSize){
     buckets = new LinkedList[initialSize];
     for(int i = 0; i < initialSize; i++){
@@ -80,13 +81,14 @@ public class SimpleHashMap {
    * This method effectively doubles our HashMap size. It takes the old Map and makes a new map with double the size (oldBuckets.length * 2)
    * All of the words are rehashed into our newly resized map using addWord method.
    */
+  @SuppressWarnings("unchecked")
   private void resize(){
     LinkedList<WordCount>[] oldBuckets = buckets; //Grabbing our map so we can double its size
     buckets = new LinkedList[oldBuckets.length * 2];
     for(int i = 0; i < buckets.length; i++){
       buckets[i] = new LinkedList<>();
     }
-    size = 0;
+    size = 0; //Resetting the size to 0 (our new HashMap size before hashing all the words again)
 
     for(LinkedList<WordCount> list : oldBuckets){
       for(WordCount wc : list){
