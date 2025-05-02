@@ -1,3 +1,8 @@
+/*
+ * This class tests Java's Built-in HashMap by hashing a large file of text and seeing the time it took and memory usage
+ * 
+ * @author Juan Villaman
+ */
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
