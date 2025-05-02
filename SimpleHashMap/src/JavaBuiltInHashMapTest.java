@@ -18,6 +18,7 @@ public class JavaBuiltInHashMapTest {
     BufferedReader reader = new BufferedReader(new FileReader("input.txt"));
     String line;
     while((line = reader.readLine()) != null){
+      //This line cleans up the text. "Hello!?1234" -> "hello" and stores them in an array
       String[] words = line.toLowerCase().replaceAll("[^a-z ]", "").split("\\s+");
       for(String word : words){
         if(!word.isEmpty()){
