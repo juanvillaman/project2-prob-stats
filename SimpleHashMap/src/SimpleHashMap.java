@@ -98,5 +98,23 @@ public class SimpleHashMap {
         }
       }
     }
-  } 
+  }
+
+  /*
+   * This getter method gets the size of our map
+   * 
+   * @return size - size of our hashmap
+   */
+  public int getSize(){
+    return size;
+  }
+
+  /*
+   * This getter methods gets the amount of spots in hashmap
+   * 
+   * @return buckets.length - how many slots are in our map
+   */
+  public int getBucketCount(){
+    return buckets.length;
+  }
 }
