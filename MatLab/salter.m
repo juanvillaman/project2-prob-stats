@@ -4,7 +4,7 @@ x = data(:, 1);
 y = data(:, 2);
 
 minVal = 1;
-maxVal = 5;
+maxVal = 10;
 
 noise = randi([minVal, maxVal], size(y));
 randomSign = randi([0, 1], size(y));
