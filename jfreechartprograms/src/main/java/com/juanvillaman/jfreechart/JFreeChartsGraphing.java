@@ -34,7 +34,16 @@ public class JFreeChartsGraphing {
     dataset.addSeries(saltedGraph);
     dataset.addSeries(smoothedGraph);
 
-    JFreeChart chart = ChartFactory.createXYLineChart("Original vs Salted vs Smoothed", "X", "Y", dataset, PlotOrientation.VERTICAL, true, true, false);
+    JFreeChart chart = ChartFactory.createXYLineChart(
+      "Original vs Salted vs Smoothed",
+      "X",
+      "Y",
+      dataset,
+      PlotOrientation.VERTICAL,
+      true,
+      true,
+      false
+    );
 
     // Video Tutorial used for JFrame (Official Java documentation was used as well): https://youtu.be/5o3fMLPY7qY
     JFrame frame = new JFrame("Original vs Salted vs Smoothed");

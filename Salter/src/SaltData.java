@@ -21,7 +21,7 @@ public class SaltData {
    */
   public void saltData() {
     readCSV("Plotter-Data.csv");
-    saltYValues(1, 350);
+    saltYValues(1, 15);
     writeCSV("Salted-Data.csv");
   }
 
