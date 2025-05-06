@@ -29,9 +29,9 @@ public class JavaBuiltInHashMapTest {
         if(!word.isEmpty()){
           if(map.containsKey(word)){
             int count = map.get(word);
-            map.put(word, count + 1);
+            map.put(word, count + 1); //If the word is our map, its count is incremented by 1
           }else{
-            map.put(word, 1);
+            map.put(word, 1); // If the word is not in our map, it is added and its count is initialized to 1
           }
         }
       }
